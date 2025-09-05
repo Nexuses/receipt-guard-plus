@@ -210,12 +210,5 @@
     @apply hover:bg-muted/50 cursor-pointer select-none transition-colors duration-200;
   }
   
-  /* Animation utilities */
-  .animate-in {
-    @apply animate-in fade-in-0 slide-in-from-bottom-4 duration-300;
-  }
-  
-  .animate-out {
-    @apply animate-out fade-out-0 slide-out-to-bottom-4 duration-200;
-  }
+  /* Animation utilities - Use directly in components */
 }
