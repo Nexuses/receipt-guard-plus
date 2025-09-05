@@ -17,6 +17,8 @@ export type Database = {
       expenses: {
         Row: {
           amount: number
+          approved_at: string | null
+          approved_by: string | null
           category: string | null
           confidence_score: number | null
           created_at: string
@@ -28,13 +30,17 @@ export type Database = {
           policy_flags: string[] | null
           receipt_url: string | null
           reimbursable: boolean | null
+          rejection_reason: string | null
           source: string | null
           status: string
+          submitted_at: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
           amount: number
+          approved_at?: string | null
+          approved_by?: string | null
           category?: string | null
           confidence_score?: number | null
           created_at?: string
@@ -46,13 +52,17 @@ export type Database = {
           policy_flags?: string[] | null
           receipt_url?: string | null
           reimbursable?: boolean | null
+          rejection_reason?: string | null
           source?: string | null
           status?: string
+          submitted_at?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
           amount?: number
+          approved_at?: string | null
+          approved_by?: string | null
           category?: string | null
           confidence_score?: number | null
           created_at?: string
@@ -64,12 +74,22 @@ export type Database = {
           policy_flags?: string[] | null
           receipt_url?: string | null
           reimbursable?: boolean | null
+          rejection_reason?: string | null
           source?: string | null
           status?: string
+          submitted_at?: string | null
           updated_at?: string
           user_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "expenses_approved_by_fkey"
+            columns: ["approved_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profiles: {
         Row: {
@@ -109,12 +129,24 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      approve_expense: {
+        Args: { expense_id: string }
+        Returns: undefined
+      }
       is_current_user_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
       }
       promote_user_to_admin: {
         Args: { user_email: string }
+        Returns: undefined
+      }
+      reject_expense: {
+        Args: { expense_id: string; reason: string }
+        Returns: undefined
+      }
+      submit_expense: {
+        Args: { expense_id: string }
         Returns: undefined
       }
     }

@@ -13,6 +13,7 @@ import Inbox from "./pages/Inbox";
 import Auth from "./pages/Auth";
 import AddExpense from "./pages/AddExpense";
 import AdminManagement from "./pages/AdminManagement";
+import ExpenseApprovalDashboard from "./pages/ExpenseApprovalDashboard";
 import PublicLanding from "./pages/PublicLanding";
 import NotFound from "./pages/NotFound";
 
@@ -41,6 +42,7 @@ const App = () => (
                           <Route path="/inbox" element={<Inbox />} />
                           <Route path="/add-expense" element={<AddExpense />} />
                           <Route path="/admin" element={<AdminManagement />} />
+                          <Route path="/approvals" element={<ExpenseApprovalDashboard />} />
                           <Route path="*" element={<NotFound />} />
                         </Routes>
                       </main>

@@ -28,7 +28,9 @@ import { Button } from "@/components/ui/button";
 const getMainNavItems = (isAdmin: boolean) => [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Inbox", url: "/inbox", icon: Inbox, badge: 23 },
-  ...(isAdmin ? [{ title: "Admin Panel", url: "/admin", icon: Crown }] : []),
+  ...(isAdmin ? [
+    { title: "Admin Panel", url: "/admin", icon: Crown },
+  ] : []),
 ];
 
 export function AppSidebar() {
