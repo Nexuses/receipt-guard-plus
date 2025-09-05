@@ -89,7 +89,11 @@ export function AppSidebar() {
         {/* Quick Actions */}
         {!isCollapsed && (
           <div className="p-4 border-b border-sidebar-border/50">
-            <Button size="sm" className="w-full enterprise-button bg-primary/90 hover:bg-primary shadow-sm">
+            <Button 
+              size="sm" 
+              className="w-full enterprise-button bg-primary/90 hover:bg-primary shadow-sm"
+              onClick={() => window.location.href = '/add-expense'}
+            >
               <Plus className="h-4 w-4 mr-2" />
               New Expense
             </Button>

@@ -33,7 +33,7 @@ export default function Dashboard() {
         <div className="relative p-8 lg:p-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="space-y-3">
-              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">Good morning, Sarah</h1>
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">Good morning!</h1>
               <p className="text-primary-foreground/90 text-lg max-w-2xl">
                 You have <span className="font-semibold text-warning">{dashboardMetrics.unreviewed} expenses</span> awaiting review and <span className="font-semibold text-destructive">{dashboardMetrics.violations} policy violations</span> to address.
               </p>
@@ -43,7 +43,11 @@ export default function Dashboard() {
                 <Upload className="h-4 w-4 mr-2" />
                 Import Data
               </Button>
-              <Button variant="outline" className="enterprise-button text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 bg-white/10 backdrop-blur-sm shadow-lg">
+              <Button 
+                variant="outline" 
+                className="enterprise-button text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 bg-white/10 backdrop-blur-sm shadow-lg"
+                onClick={() => window.location.href = '/add-expense'}
+              >
                 <Plus className="h-4 w-4 mr-2" />
                 New Expense
               </Button>
