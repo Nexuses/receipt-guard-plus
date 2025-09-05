@@ -3,15 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   Inbox,
-  Receipt,
-  Settings,
-  Users,
-  BarChart3,
-  Shield,
-  Zap,
   CreditCard,
-  FileText,
-  Search,
   Plus
 } from "lucide-react";
 
@@ -33,16 +25,6 @@ import { Button } from "@/components/ui/button";
 const mainNavItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Inbox", url: "/inbox", icon: Inbox, badge: 23 },
-  { title: "Sources", url: "/sources", icon: Receipt },
-  { title: "Rules", url: "/rules", icon: Zap },
-  { title: "Approvals", url: "/approvals", icon: Shield, badge: 5 },
-  { title: "Reports", url: "/reports", icon: BarChart3 },
-];
-
-const adminNavItems = [
-  { title: "Users", url: "/users", icon: Users },
-  { title: "Audit", url: "/audit", icon: FileText },
-  { title: "Settings", url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -130,26 +112,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        {/* Admin Navigation */}
-        <SidebarGroup>
-          <SidebarGroupLabel className={isCollapsed ? "sr-only" : ""}>
-            Administration
-          </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {adminNavItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <NavLink to={item.url} className={getNavCls(item.url)}>
-                      <item.icon className="h-4 w-4" />
-                      {!isCollapsed && <span>{item.title}</span>}
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
       </SidebarContent>
     </Sidebar>
   );
