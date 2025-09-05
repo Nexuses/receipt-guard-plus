@@ -8,134 +8,134 @@
 @layer base {
   :root {
     /* Light mode - system fallback */
-    --background: 210 20% 98%;
-    --foreground: 220 14% 11%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
     
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 11%;
+    --card-foreground: 240 10% 3.9%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 11%;
+    --popover-foreground: 240 10% 3.9%;
     
-    --primary: 220 14% 11%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 240 9% 10%;
+    --primary-foreground: 0 0% 98%;
     
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 9% 20%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
     
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 45%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
     
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 9% 20%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
     
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 14% 11%;
-    
-    --radius: 1rem;
-    
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.75rem;
+
     /* Enterprise semantic colors */
-    --success: 160 84% 39%;
-    --success-foreground: 210 20% 98%;
-    --warning: 38 92% 50%;
-    --warning-foreground: 220 14% 11%;
-    --info: 217 91% 60%;
-    --info-foreground: 210 20% 98%;
-    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 47 96% 53%;
+    --warning-foreground: 240 10% 3.9%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 98%;
+
     /* Status colors */
-    --status-pending: 38 92% 50%;
-    --status-approved: 160 84% 39%;
-    --status-rejected: 0 84% 60%;
-    --status-draft: 220 9% 45%;
-    
+    --status-pending: 47 96% 53%;
+    --status-approved: 142 76% 36%;
+    --status-rejected: 0 84.2% 60.2%;
+    --status-draft: 240 3.8% 46.1%;
+
     /* Confidence levels */
-    --confidence-high: 160 84% 39%;
-    --confidence-medium: 38 92% 50%;
-    --confidence-low: 0 84% 60%;
-    
+    --confidence-high: 142 76% 36%;
+    --confidence-medium: 47 96% 53%;
+    --confidence-low: 0 84.2% 60.2%;
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 14% 11%) 0%, hsl(220 9% 20%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(160 84% 39%) 0%, hsl(160 84% 49%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 99%) 100%);
-    
+    --gradient-primary: linear-gradient(135deg, hsl(240 9% 10%) 0%, hsl(240 5.9% 10%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 46%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(240 4.8% 99%) 100%);
+
     /* Sidebar */
-    --sidebar-background: 220 14% 99%;
-    --sidebar-foreground: 220 9% 20%;
-    --sidebar-primary: 220 14% 11%;
-    --sidebar-primary-foreground: 210 20% 98%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 9% 20%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-background: 240 5.9% 98%;
+    --sidebar-foreground: 240 10% 3.9%;
+    --sidebar-primary: 240 9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 240 5.9% 90%;
+    --sidebar-ring: 221 83% 53%;
   }
 
   .dark {
     /* Dark mode - primary theme */
-    --background: 220 14% 6%;
-    --foreground: 210 20% 98%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
     
-    --card: 220 14% 8%;
-    --card-foreground: 210 20% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
     
-    --popover: 220 14% 8%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
     
-    --primary: 210 20% 98%;
-    --primary-foreground: 220 14% 11%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
     
-    --secondary: 220 14% 11%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
     
-    --muted: 220 14% 11%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
     
-    --accent: 220 14% 11%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
     
-    --border: 220 14% 14%;
-    --input: 220 14% 14%;
-    --ring: 210 20% 98%;
-    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
     /* Enterprise semantic colors - dark variants */
-    --success: 160 64% 49%;
-    --success-foreground: 210 20% 98%;
-    --warning: 38 82% 60%;
-    --warning-foreground: 220 14% 11%;
-    --info: 217 81% 70%;
-    --info-foreground: 210 20% 98%;
-    
+    --success: 142 72% 29%;
+    --success-foreground: 0 0% 98%;
+    --warning: 47 96% 53%;
+    --warning-foreground: 240 10% 3.9%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 98%;
+
     /* Status colors - dark variants */
-    --status-pending: 38 82% 60%;
-    --status-approved: 160 64% 49%;
-    --status-rejected: 0 84% 60%;
-    --status-draft: 220 9% 65%;
-    
+    --status-pending: 47 96% 53%;
+    --status-approved: 142 72% 29%;
+    --status-rejected: 0 84.2% 60.2%;
+    --status-draft: 240 5% 64.9%;
+
     /* Confidence levels - dark variants */
-    --confidence-high: 160 64% 49%;
-    --confidence-medium: 38 82% 60%;
-    --confidence-low: 0 84% 60%;
-    
+    --confidence-high: 142 72% 29%;
+    --confidence-medium: 47 96% 53%;
+    --confidence-low: 0 84.2% 60.2%;
+
     /* Gradients - dark variants */
-    --gradient-primary: linear-gradient(135deg, hsl(220 14% 8%) 0%, hsl(220 14% 11%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(160 64% 39%) 0%, hsl(160 64% 49%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 14% 8%) 0%, hsl(220 14% 10%) 100%);
-    
+    --gradient-primary: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 3.7% 15.9%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 72% 29%) 0%, hsl(142 72% 39%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 3.9%) 0%, hsl(240 3.7% 15.9%) 100%);
+
     /* Sidebar - dark variants */
-    --sidebar-background: 220 14% 7%;
-    --sidebar-foreground: 210 20% 85%;
-    --sidebar-primary: 210 20% 98%;
-    --sidebar-primary-foreground: 220 14% 11%;
-    --sidebar-accent: 220 14% 11%;
-    --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 220 14% 14%;
-    --sidebar-ring: 217 81% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 221 83% 53%;
   }
 }
 
@@ -150,18 +150,22 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: dark light;
+  }
+  
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
   /* Enterprise Component Variants */
   .expense-card {
-    @apply bg-gradient-to-br from-card to-card/80 border border-border/50 rounded-2xl shadow-lg backdrop-blur-sm;
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl shadow-sm transition-all duration-200 hover:shadow-md hover:bg-card/80;
   }
   
   .kpi-card {
-    @apply expense-card p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02];
+    @apply expense-card p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.01];
   }
   
   .status-badge-pending {
@@ -194,7 +198,7 @@
   
   /* Interactive Elements */
   .enterprise-button {
-    @apply transition-all duration-200 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
   
   .glass-effect {
@@ -203,12 +207,32 @@
   
   /* Data Table Enhancements */
   .data-row:hover {
-    @apply bg-muted/50 transition-colors duration-200;
+    @apply bg-muted/30 transition-colors duration-200;
   }
   
   .sortable-header {
-    @apply hover:bg-muted/50 cursor-pointer select-none transition-colors duration-200;
+    @apply hover:bg-muted/30 cursor-pointer select-none transition-colors duration-200;
   }
   
-  /* Animation utilities - Use directly in components */
+  /* Utility Classes */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+  
+  .card-shadow {
+    @apply shadow-[0_1px_3px_0_rgb(0_0_0_/_0.1),_0_1px_2px_-1px_rgb(0_0_0_/_0.1)] dark:shadow-[0_1px_3px_0_rgb(0_0_0_/_0.3),_0_1px_2px_-1px_rgb(0_0_0_/_0.3)];
+  }
+  
+  .border-soft {
+    @apply border-border/30;
+  }
+  
+  /* Navigation Enhancements */
+  .nav-item-active {
+    @apply bg-primary/10 text-primary font-medium border-r-2 border-primary;
+  }
+  
+  .nav-item-hover {
+    @apply hover:bg-muted/50 transition-colors duration-150;
+  }
 }

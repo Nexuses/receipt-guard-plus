@@ -19,31 +19,31 @@ import heroImage from "@/assets/hero-dashboard.jpg";
 
 export default function Dashboard() {
   return (
-    <div className="flex-1 space-y-6 p-6">
+    <div className="flex-1 space-y-8 p-6 bg-gradient-to-br from-background to-muted/20">
       {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground shadow-xl">
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         />
-        <div className="relative p-8">
-          <div className="flex items-center justify-between">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold">Good morning, Sarah</h1>
-              <p className="text-primary-foreground/90">
-                You have {dashboardMetrics.unreviewed} expenses awaiting review and {dashboardMetrics.violations} policy violations to address.
+        <div className="relative p-8 lg:p-12">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div className="space-y-3">
+              <h1 className="text-4xl lg:text-5xl font-bold tracking-tight">Good morning, Sarah</h1>
+              <p className="text-primary-foreground/90 text-lg max-w-2xl">
+                You have <span className="font-semibold text-warning">{dashboardMetrics.unreviewed} expenses</span> awaiting review and <span className="font-semibold text-destructive">{dashboardMetrics.violations} policy violations</span> to address.
               </p>
             </div>
-            <div className="hidden md:flex gap-3">
-              <Button variant="secondary" className="enterprise-button">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button variant="secondary" className="enterprise-button shadow-lg">
                 <Upload className="h-4 w-4 mr-2" />
                 Import Data
               </Button>
-              <Button variant="outline" className="enterprise-button text-primary-foreground border-primary-foreground/20 hover:bg-primary-foreground/10">
+              <Button variant="outline" className="enterprise-button text-primary-foreground border-primary-foreground/30 hover:bg-primary-foreground/10 bg-white/10 backdrop-blur-sm shadow-lg">
                 <Plus className="h-4 w-4 mr-2" />
                 New Expense
               </Button>

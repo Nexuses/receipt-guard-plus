@@ -33,55 +33,65 @@ export function KPICard({
   trend 
 }: KPICardProps) {
   return (
-    <Card className="kpi-card group">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-muted-foreground">
+    <Card className="expense-card group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-card via-card to-card/90">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+        <CardTitle className="text-sm font-medium text-muted-foreground/80">
           {title}
         </CardTitle>
-        <div className="text-muted-foreground group-hover:text-primary transition-colors">
+        <div className="p-2 rounded-lg bg-primary/5 text-muted-foreground group-hover:text-primary group-hover:bg-primary/10 transition-all duration-200">
           {icon}
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <div className="text-2xl font-bold">{value}</div>
+      <CardContent className="space-y-4">
+        <div className="flex items-start justify-between">
+          <div className="space-y-2">
+            <div className="text-3xl font-bold tracking-tight">{value}</div>
             {change && (
-              <div className="flex items-center text-xs text-muted-foreground">
+              <div className="flex items-center space-x-1 text-sm">
                 {change.type === 'increase' ? (
-                  <TrendingUp className="mr-1 h-3 w-3 text-success" />
+                  <TrendingUp className="h-4 w-4 text-success" />
                 ) : (
-                  <TrendingDown className="mr-1 h-3 w-3 text-destructive" />
+                  <TrendingDown className="h-4 w-4 text-destructive" />
                 )}
-                <span className={change.type === 'increase' ? 'text-success' : 'text-destructive'}>
+                <span className={`font-medium ${change.type === 'increase' ? 'text-success' : 'text-destructive'}`}>
                   {change.value > 0 ? '+' : ''}{change.value}%
                 </span>
-                <span className="ml-1">from {change.period}</span>
+                <span className="text-muted-foreground">vs {change.period}</span>
               </div>
             )}
             {description && (
-              <p className="text-xs text-muted-foreground">{description}</p>
+              <p className="text-sm text-muted-foreground/80">{description}</p>
             )}
           </div>
           {badge && (
-            <Badge variant={badge.variant} className="ml-auto">
+            <Badge variant={badge.variant} className="text-xs px-2 py-1 shadow-sm">
               {badge.text}
             </Badge>
           )}
         </div>
         
-        {/* Mini trend chart placeholder */}
+        {/* Enhanced mini trend chart */}
         {trend && (
-          <div className="mt-4 h-8 flex items-end space-x-1">
-            {trend.data.map((point, index) => (
-              <div
-                key={index}
-                className={`w-2 rounded-sm transition-all ${
-                  trend.positive ? 'bg-success/30 hover:bg-success/50' : 'bg-destructive/30 hover:bg-destructive/50'
-                }`}
-                style={{ height: `${(point / Math.max(...trend.data)) * 100}%` }}
-              />
-            ))}
+          <div className="space-y-2">
+            <div className="h-12 flex items-end justify-between gap-1">
+              {trend.data.map((point, index) => (
+                <div
+                  key={index}
+                  className={`flex-1 max-w-[8px] rounded-t-sm transition-all duration-300 hover:opacity-80 ${
+                    trend.positive 
+                      ? 'bg-gradient-to-t from-success/60 to-success/30' 
+                      : 'bg-gradient-to-t from-destructive/60 to-destructive/30'
+                  }`}
+                  style={{ height: `${Math.max(4, (point / Math.max(...trend.data)) * 100)}%` }}
+                />
+              ))}
+            </div>
+            <div className="flex items-center justify-between text-xs text-muted-foreground">
+              <span>7 days</span>
+              <span className={trend.positive ? 'text-success' : 'text-destructive'}>
+                {trend.positive ? '↗' : '↘'} Trending {trend.positive ? 'up' : 'down'}
+              </span>
+            </div>
           </div>
         )}
       </CardContent>

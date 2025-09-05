@@ -58,35 +58,38 @@ export function AppSidebar() {
 
   const getNavCls = (path: string) =>
     isActive(path) 
-      ? "bg-primary/10 text-primary font-medium border-r-2 border-primary" 
-      : "hover:bg-muted/50 text-sidebar-foreground";
+      ? "nav-item-active" 
+      : "nav-item-hover text-sidebar-foreground/80";
 
   return (
     <Sidebar
-      className="transition-all duration-300 border-r border-sidebar-border"
+      className="transition-all duration-300 border-r border-sidebar-border bg-sidebar"
       collapsible="icon"
     >
-      <SidebarContent className="bg-sidebar">
+      <SidebarContent className="bg-sidebar/50 backdrop-blur-sm">
         {/* Logo/Brand */}
-        <div className="p-4 border-b border-sidebar-border">
+        <div className="p-4 border-b border-sidebar-border/50">
           {isCollapsed ? (
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
               <CreditCard className="h-4 w-4 text-primary-foreground" />
             </div>
           ) : (
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
                 <CreditCard className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-sidebar-foreground">ExpenseFlow</span>
+              <div>
+                <span className="font-semibold text-sidebar-foreground">ExpenseFlow</span>
+                <p className="text-xs text-sidebar-foreground/60">Enterprise</p>
+              </div>
             </div>
           )}
         </div>
 
         {/* Quick Actions */}
         {!isCollapsed && (
-          <div className="p-4 border-b border-sidebar-border">
-            <Button size="sm" className="w-full enterprise-button">
+          <div className="p-4 border-b border-sidebar-border/50">
+            <Button size="sm" className="w-full enterprise-button bg-primary/90 hover:bg-primary shadow-sm">
               <Plus className="h-4 w-4 mr-2" />
               New Expense
             </Button>
