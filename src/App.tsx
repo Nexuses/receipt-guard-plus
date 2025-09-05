@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import Inbox from "./pages/Inbox";
 import Auth from "./pages/Auth";
 import AddExpense from "./pages/AddExpense";
+import AdminManagement from "./pages/AdminManagement";
 import PublicLanding from "./pages/PublicLanding";
 import NotFound from "./pages/NotFound";
 
@@ -39,6 +40,7 @@ const App = () => (
                           <Route path="/" element={<Dashboard />} />
                           <Route path="/inbox" element={<Inbox />} />
                           <Route path="/add-expense" element={<AddExpense />} />
+                          <Route path="/admin" element={<AdminManagement />} />
                           <Route path="*" element={<NotFound />} />
                         </Routes>
                       </main>
